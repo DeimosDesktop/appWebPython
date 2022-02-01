@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primera APP en Python con flask</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}"/>
 </head>
 <body>
-    <h1>Bienvenido a la APP de Tareas.</h1>
-    <footer>App creada por <a href="https://mirpas.com" target="_blank">MIRPAS.COM</a></footer>
+    <main class="container p-4">
+        <h1 class="display-4 text-center mt-4">Bienvenido a la APP de Tareas.</h1>
+        <div class="col-md-6 offset-md-3 my-auto">
+            <div class="card">
+                <div class="card-header">
+                    <form action="/crear-tarea" method="POST" name="form_edit">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="contenido_tarea"/>
+                            <button  class="col-md-12 btn btn-primary btn-block" type="submit">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>App creada por <a href="https://mirpas.com" target="_blank">MIRPAS.COM</a></footer>
+    </main>
+   
 </body>
 </html>
