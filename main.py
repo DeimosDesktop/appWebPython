@@ -25,7 +25,19 @@ def crear():
     db.session.commit()
     return redirect(url_for('saludo'))
 
+@app.route("/tarea-hecha/<id>")
+def hecha(id):
+    tarea = db.session.query(Tarea).filter_by(id=id).first()
+    tarea.hecha = not(tarea.hecha)
+    db.session.commit()
+    return redirect(url_for('saludo'))
+
+@app.route("/eliminar-tarea/<id>")
+def eliminar(id):
+    tarea = db.session.query(Tarea).filter_by(id=id).delete()
+    db.session.commit()
+    return redirect(url_for('saludo'))
+
 if __name__ == "__main__":
     db.Base.metadata.create_all(db.server)
     app.run(debug=True)
-
