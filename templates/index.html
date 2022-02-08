@@ -19,7 +19,7 @@
                             <input type="text" class="form-control" name="contenido_tarea"/>
                             <button  class="col-md-12 btn btn-primary btn-block" type="submit">Guardar</button>
                         </div>
-                    </form>
+                    </form><br>
                     {% for tareas in lista_tareas: %}
                     <div class="{% if tareas.hecha == 1 %} tareas_hechas {% endif %}"> {{ tareas.contenido }} | 
                         <a href="/tarea-hecha/{{ tareas.id }}" style="text-decoration:none;">
